@@ -1,0 +1,13 @@
+/*===========================
+	!! Redux RTL !!
+============================*/
+.redux-sidebar .hasSubSections .extraIconSubsections {
+	float:left !important;
+}
+
+.redux-main {
+	margin-right:0;
+}
+.redux-main .description {
+	word-break:break-all;
+}
