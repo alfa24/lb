@@ -1,0 +1,13 @@
+#searchBox, #instDetails {
+    margin-top: 60px;
+}
+
+#searchBox .form-control {
+    margin: 5px;
+}
+
+
+.bckgr-gray .panel {
+    min-height: 200px;
+    background: #e8e8e8;
+}

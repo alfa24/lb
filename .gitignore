@@ -1,0 +1,10 @@
+*.pyc
+__pycache__
+.DS_Store
+/livebooking/gunicorn.conf.py
+/livebooking/local_settings.py
+.idea/*
+.idea/inspectionProfiles/
+.idea/misc.xml
+.idea/modules.xml
+/static_prod/

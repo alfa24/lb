@@ -1,0 +1,43 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+    {% include 'services/search_box.html' %}
+
+    <div class="row bckgr-gray" id="resultsItems">
+        <div class="container">
+            <h2 class="text-center">Показаны результаты для "мужсая стрижка"</h2>
+
+
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <a href=""><h4><b>Мастер 1</b></h4> </a>
+                                        <a href=""><h4>Мужская стрижка</h4></a>
+                                    </div>
+                                </div> <!-- end row -->
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <b>Стоимость: 200</b>
+                                    </div> <!-- end col-sm-3 -->
+
+                                    <div class="col-sm-5 text-center">
+                                        <b>Длительность: 1ч</b>
+                                    </div> <!-- end col-sm-5 -->
+
+                                    <div class="col-sm-4 text-right">
+                                        <b>Адрес: Карла-Маркса 24</b>
+                                    </div> <!-- end col-sm-4 -->
+                                </div> <!-- end row -->
+                            </div>
+                        </div>
+                    </div> <!-- end col-xs-12 -->
+                </div> <!-- end row -->
+
+
+        </div> <!-- end container -->
+    </div> <!-- end row -->
+
+{% endblock content %}
