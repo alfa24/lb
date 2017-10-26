@@ -23,7 +23,7 @@ class ServiceCategory(models.Model):
 class Service(models.Model):
     name = models.CharField(verbose_name="Название", max_length=50, blank=True, null=True, default=None)
     description = models.TextField(verbose_name="Описание", blank=True, null=True, default=None)
-    category = models.ForeignKey(ServiceCategory)
+    category = models.ManyToManyField(ServiceCategory)
     is_active = models.BooleanField(verbose_name="Активный", default=True)
     created = models.DateTimeField(verbose_name="Создан", auto_now_add=True, auto_now=False)
     updated = models.DateTimeField(verbose_name="Изменен", auto_now_add=False, auto_now=True)
@@ -50,7 +50,7 @@ class ServiceProfessional(models.Model):
     updated = models.DateTimeField(verbose_name="Изменен", auto_now_add=False, auto_now=True)
 
     def __str__(self):
-        return "%s" % self.professional, self.service
+        return "%s - %s" % (self.professional, self.service)
 
     class Meta:
         verbose_name = "Услуга профессионала"

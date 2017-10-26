@@ -23,7 +23,7 @@ class UserProfileCompanyInline(admin.StackedInline):
 class UserProfileAdmin(admin.ModelAdmin):
     verbose_name_plural = 'Пользователи и группы'
     inlines = []
-    readonly_fields = ['type']
+    # readonly_fields = ['type']
 
     def change_view(self, request, object_id, form_url='', extra_context=None):
         if object_id:
@@ -37,3 +37,5 @@ class UserProfileAdmin(admin.ModelAdmin):
 
 
 admin.site.register(UserProfile, UserProfileAdmin)
+admin.site.register(ProfileCompany)
+admin.site.register(ProfileClient)
