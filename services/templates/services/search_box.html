@@ -1,0 +1,30 @@
+<div class="row" id="searchBox">
+    <div class="container">
+        <div class="well">
+            <h3>Что вы хотите найти?</h3>
+            <form id="searchForm" action="" method="GET">
+                <div class="row">
+                    <div class="col-sm-6 text-center">
+                        <input name="search_text" type="text" class="form-control input-lg" placeholder="Поиск"
+                               value="{{ search_text }}">
+                    </div>
+                    <div class="col-sm-4 text-center">
+                        <select name="search_type" class="form-control input-lg">
+                            <option selected
+                                    value="Специалиста">Специалиста
+                            </option>
+                            <option
+                                    value="Услугу">Услугу
+                            </option>
+                        </select>
+                    </div>
+                    <div class="col-sm-2 text-center">
+                        <button type="submit" class="btn btn-primary btn-lg">Поиск</button>
+                    </div>
+                </div>
+                <br/>
+            </form>
+        </div>
+
+    </div> <!-- /container -->
+</div> <!-- end row -->

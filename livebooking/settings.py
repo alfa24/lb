@@ -52,7 +52,8 @@ INSTALLED_APPS = [
 
     # apps
     'livebooking',
-    'main.users',
+    'users',
+    'services',
 ]
 
 MIDDLEWARE = [
@@ -134,13 +135,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),
+    os.path.join(BASE_DIR, "staticfiles"),
 ]
-STATIC_ROOT = os.path.join(BASE_DIR, 'static_prod')
+# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 
 # AllAuth
-ACCOUNT_SIGNUP_FORM_CLASS = 'main.users.forms.SignupForm'
+ACCOUNT_SIGNUP_FORM_CLASS = 'users.forms.SignupForm'
 # allauth
 AUTHENTICATION_BACKENDS = [
     # Needed to login by username in Django admin, regardless of `allauth`
