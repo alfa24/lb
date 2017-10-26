@@ -20,9 +20,10 @@ from django.conf import settings
 from livebooking import views
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-    url(r'^accounts/', include('allauth.urls')),
-    url(r'^$', views.index, name='index'),
+                  url(r'^admin/', admin.site.urls),
+                  url(r'^accounts/', include('allauth.urls')),
+                  url(r'^', include('services.urls')),
+                  url(r'^$', views.index, name='index'),
 
-]\
-+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+              ] \
+              + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
