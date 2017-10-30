@@ -151,6 +151,15 @@ AUTHENTICATION_BACKENDS = [
     'allauth.account.auth_backends.AuthenticationBackend',
 ]
 
+# search
+PROFESSIONALS = 0
+SERVICES = 1
+
+search_types = (
+    (PROFESSIONALS, 'Специалиста'),
+    (SERVICES, 'Услугу')
+)
+
 # Local Settings
 try:
     from livebooking.local_settings import *

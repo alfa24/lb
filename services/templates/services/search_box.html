@@ -2,7 +2,7 @@
     <div class="container">
         <div class="well">
             <h3>Что вы хотите найти?</h3>
-            <form id="searchForm" action="" method="GET">
+            <form id="searchForm" action="{% url 'services:search_result' %}" method="GET">
                 <div class="row">
                     <div class="col-sm-6 text-center">
                         <input name="search_text" type="text" class="form-control input-lg" placeholder="Поиск"
@@ -10,12 +10,15 @@
                     </div>
                     <div class="col-sm-4 text-center">
                         <select name="search_type" class="form-control input-lg">
-                            <option selected
-                                    value="Специалиста">Специалиста
-                            </option>
-                            <option
-                                    value="Услугу">Услугу
-                            </option>
+                            {% for s_type in search_types %}
+                                {{ search_type }}
+                                <option
+                                        {% if s_type.0 == search_type %}
+                                            selected
+                                        {% endif %}
+                                        value="{{ s_type.0 }}">{{ s_type.1 }}
+                                </option>
+                            {% endfor %}
                         </select>
                     </div>
                     <div class="col-sm-2 text-center">

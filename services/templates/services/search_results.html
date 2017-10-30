@@ -5,37 +5,70 @@
 
     <div class="row bckgr-gray" id="resultsItems">
         <div class="container">
-            <h2 class="text-center">Показаны результаты для "мужсая стрижка"</h2>
+            <h2 class="text-center">Показаны результаты для "{{ search_text }}"</h2>
+            {% if search_type == setting.PROFESSIONALS %}
+                {% for prof in items %}
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <a href=""><h4><b>{{ prof.user_profile.user.first_name }}</b></h4></a>
+                                            <a href=""><h4>{{ prof.user_profile.user.last_name }}</h4></a>
+                                        </div>
+                                    </div> <!-- end row -->
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <b>Стоимость: 200</b>
+                                        </div> <!-- end col-sm-3 -->
 
+                                        <div class="col-sm-5 text-center">
+                                            <b>Длительность: 1ч</b>
+                                        </div> <!-- end col-sm-5 -->
 
-                <div class="row">
-                    <div class="col-xs-12">
-                        <div class="panel panel-default">
-                            <div class="panel-body">
-                                <div class="row">
-                                    <div class="col-sm-12">
-                                        <a href=""><h4><b>Мастер 1</b></h4> </a>
-                                        <a href=""><h4>Мужская стрижка</h4></a>
-                                    </div>
-                                </div> <!-- end row -->
-                                <div class="row">
-                                    <div class="col-sm-3">
-                                        <b>Стоимость: 200</b>
-                                    </div> <!-- end col-sm-3 -->
-
-                                    <div class="col-sm-5 text-center">
-                                        <b>Длительность: 1ч</b>
-                                    </div> <!-- end col-sm-5 -->
-
-                                    <div class="col-sm-4 text-right">
-                                        <b>Адрес: Карла-Маркса 24</b>
-                                    </div> <!-- end col-sm-4 -->
-                                </div> <!-- end row -->
+                                        <div class="col-sm-4 text-right">
+                                            <b>Адрес: Карла-Маркса 24</b>
+                                        </div> <!-- end col-sm-4 -->
+                                    </div> <!-- end row -->
+                                </div>
                             </div>
-                        </div>
-                    </div> <!-- end col-xs-12 -->
-                </div> <!-- end row -->
+                        </div> <!-- end col-xs-12 -->
+                    </div> <!-- end row -->
+                {% endfor %}
+            {% endif %}
 
+            {% if search_type == setting.SERVICES %}
+                {% for item in items %}
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <a href=""><h4><b>{{ item.name }}</b></h4></a>
+                                            <a href=""><h4></h4></a>
+                                        </div>
+                                    </div> <!-- end row -->
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <b>Стоимость: 200</b>
+                                        </div> <!-- end col-sm-3 -->
+
+                                        <div class="col-sm-5 text-center">
+                                            <b>Длительность: 1ч</b>
+                                        </div> <!-- end col-sm-5 -->
+
+                                        <div class="col-sm-4 text-right">
+                                            <b>Адрес: Карла-Маркса 24</b>
+                                        </div> <!-- end col-sm-4 -->
+                                    </div> <!-- end row -->
+                                </div>
+                            </div>
+                        </div> <!-- end col-xs-12 -->
+                    </div> <!-- end row -->
+                {% endfor %}
+            {% endif %}
 
         </div> <!-- end container -->
     </div> <!-- end row -->
