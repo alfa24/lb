@@ -1,20 +1,39 @@
 {% extends 'main/base.html' %}
+{% load pinax_news_tags %}
+
 
 {% block content %}
 
     {% include 'services/search_box.html' %}
 
+    <div class="container">
+        <div class="row">
+            {% for item in service_categories %}
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 text-center">
+                    <a href="{% url 'services:search_result' %}?search_text={{ item.name }}" class="thumbnail">
+                        <img style="position: relative" class="center-block"
+                             src="http://lorempixel.com/458/240?rand={{ item.id }}" alt="Image">
+                        <p>
+                        <h2>{{ item.name }}</h2></p>
+                    </a>
+                </div>
+
+            {% endfor %}
+        </div> <!-- end row -->
+    </div> <!-- end container -->
+
     <div class="row bckgr-gray" id="news">
+        {% press_release 0 as press_release1 %}
+        {% press_release 1 as press_release2 %}
+        {% press_release 2 as press_release3 %}
         <div class="container">
             <h2 class="text-center">Новости</h2>
 
             <div class="col-sm-6">
                 <div class="panel panel-default">
                     <div class="panel-body">
-                        <h4><b>Новость 1</b></h4>
-                        <p>Spisso motura aquae fuit
-                            nabataeaque campos ultima
-                            zonae numero vis.</p>
+                        <h4><b>{{ press_release1.title }}</b></h4>
+                        <p>{{ press_release1.description }}</p>
                     </div>
                 </div>
             </div> <!-- end col-sm-6 -->
@@ -22,20 +41,16 @@
             <div class="col-sm-3">
                 <div class="panel panel-default">
                     <div class="panel-body">
-                        <h4><b>Новость 2</b></h4>
-                        <p>Spisso motura aquae fuit
-                            nabataeaque campos ultima
-                            zonae numero vis.</p>
+                        <h4><b>{{ press_release2.title }}</b></h4>
+                        <p>{{ press_release2.description }}</p>
                     </div>
                 </div>
             </div>
             <div class="col-sm-3">
                 <div class="panel panel-default">
                     <div class="panel-body">
-                        <h4><b>Новость 3</b></h4>
-                        <p>Spisso motura aquae fuit
-                            nabataeaque campos ultima
-                            zonae numero vis.</p>
+                        <h4><b>{{ press_release3.title }}</b></h4>
+                        <p>{{ press_release3.description }}</p>
                     </div>
                 </div>
             </div>

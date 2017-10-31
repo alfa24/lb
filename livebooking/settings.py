@@ -50,6 +50,10 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'django.contrib.sites',
 
+    # # pinax-news
+    "imagekit",
+    "pinax.news",
+
     # apps
     'livebooking',
     'users',
@@ -159,6 +163,10 @@ search_types = (
     (PROFESSIONALS, 'Специалиста'),
     (SERVICES, 'Услугу')
 )
+
+# pinax
+PINAX_NEWS_IMAGE_THUMBNAIL_SPEC = "pinax.news.specs.ImageThumbnail"
+PINAX_NEWS_SECONDARY_IMAGE_THUMBNAIL_SPEC = "pinax.news.specs.SecondaryImageThumbnail"
 
 # Local Settings
 try:
